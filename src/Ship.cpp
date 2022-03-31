@@ -10,9 +10,14 @@ Ship::Ship(sf::Window &window)
 
 Ship::~Ship() {}
 
-void Ship::move(int dir)
+void Ship::move()
 {
-	this->x += dir * 5;
+	this->x += this->xdir * 5;
+}
+
+void Ship::setDir(int dir)
+{
+	this->xdir = dir;
 }
 
 void Ship::show(sf::RenderWindow &window)

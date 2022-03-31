@@ -7,15 +7,21 @@ class Enemy
 private:
 	float x = 0;
 	float y = 50.0f;
+	float r = 60.0f;
 
-	float width = 0;
-	float height = 0;
+	float xdir = 1.0f;
 public:
 	Enemy() {}
-	Enemy(sf::Window &window, float x, float y);
+	Enemy(float x, float y);
 	~Enemy();
 
-	void move(int dir);
-
+	void hurt();
+	void move();
+	void shiftDown();
 	void show(sf::RenderWindow &window);
+
+	inline float getX() { return x; }
+	inline float getY() { return y; }
+	inline float getRadius() { return r; }
+	inline sf::Vector2f getPosition() { return sf::Vector2f(x, y); }
 };
